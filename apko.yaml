@@ -1,0 +1,26 @@
+contents:
+  repositories:
+    - https://dl-cdn.alpinelinux.org/alpine/edge/main
+    - https://dl-cdn.alpinelinux.org/alpine/edge/community
+  packages:
+    - ca-certificates-bundle
+    - alpine-base
+    - aws-cli
+    - bash
+    - helm
+    - jq
+
+paths:
+  - path: /work
+    type: directory
+    permissions: 0o777
+
+work-dir: /work
+
+entrypoint:
+  command: /bin/bash
+cmd: --help
+
+archs:
+  - x86_64
+  - aarch64
