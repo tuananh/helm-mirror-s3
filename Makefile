@@ -1,6 +1,6 @@
 ARCH := $(shell uname -m)
 KEY ?= local-melange.rsa
-PACKAGE ?= packages/${ARCH}/helm-mirror-*.apk
+PACKAGE ?= packages/${ARCH}/helm-mirror-0.1.0-r0.apk
 
 MELANGE_OPTS += --keyring-append ${KEY}.pub
 MELANGE_OPTS += --signing-key ${KEY}
