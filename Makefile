@@ -1,6 +1,6 @@
 ARCH := $(shell uname -m)
 KEY ?= local-melange.rsa
-PACKAGE ?= packages/x86_64/helm-mirror-*.apk
+PACKAGE ?= packages/${ARCH}/helm-mirror-*.apk
 
 MELANGE_OPTS += --keyring-append ${KEY}.pub
 MELANGE_OPTS += --signing-key ${KEY}
@@ -17,5 +17,3 @@ ${PACKAGE}: ${KEY}
 
 image: ${PACKAGE}
 	docker run --privileged --rm --entrypoint apko -v "${PWD}:${PWD}" -w "${PWD}" cgr.dev/chainguard/sdk build --keyring-append local-melange.rsa.pub apko.yaml helm-mirror:latest helm-mirror.tar
-help:
-	docker run --privileged --rm --entrypoint melange -v "${PWD}:${PWD}" -w "${PWD}" cgr.dev/chainguard/sdk build --help
