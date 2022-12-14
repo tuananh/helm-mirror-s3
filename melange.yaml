@@ -1,0 +1,25 @@
+package:
+  name: helm-mirror
+  version: 0.1.0
+  epoch: 0
+  description: A Bash script to mirror Helm charts to S3
+  target-architecture:
+    - all
+  copyright:
+    - paths:
+        - "*"
+      attestation: TODO
+      license: MIT
+  dependencies:
+    runtime:
+      - bash
+environment:
+  contents:
+    repositories:
+    - https://dl-cdn.alpinelinux.org/alpine/edge/main
+    packages:
+      - busybox
+      - coreutils
+pipeline:
+  - runs: |
+      install -Dm755 helm-mirror.sh ${{targets.destdir}}/usr/bin/helm-mirror

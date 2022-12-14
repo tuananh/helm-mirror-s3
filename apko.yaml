@@ -2,6 +2,7 @@ contents:
   repositories:
     - https://dl-cdn.alpinelinux.org/alpine/edge/main
     - https://dl-cdn.alpinelinux.org/alpine/edge/community
+    - '@local ./packages'
   packages:
     - ca-certificates-bundle
     - alpine-base
@@ -9,6 +10,7 @@ contents:
     - bash
     - helm
     - jq
+    - helm-mirror@local
 
 paths:
   - path: /work
@@ -23,4 +25,4 @@ cmd: --help
 
 archs:
   - x86_64
-  - aarch64
+  # - aarch64
