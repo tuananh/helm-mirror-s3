@@ -47,7 +47,7 @@ jobs:
           config: melange.yaml
           sign-with-temporary-key: true
           archs: x86_64,aarch64
-          empty-workspace: true
+          # empty-workspace: true
 
       - uses: chainguard-dev/actions/apko-build@main
         id: apko
