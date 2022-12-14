@@ -2,7 +2,7 @@ contents:
   repositories:
     - https://dl-cdn.alpinelinux.org/alpine/edge/main
     - https://dl-cdn.alpinelinux.org/alpine/edge/community
-    - '@local ./packages'
+    - '@local /github/workspace/packages'
   packages:
     - ca-certificates-bundle
     - alpine-base
